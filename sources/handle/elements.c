@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   elements.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/23 17:56:13 by bsouchet          #+#    #+#             */
+/*   Updated: 2017/01/27 04:22:15 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "rt.h"
+
+void		add_new_element(t_rt *rt, char type)
+{
+	rt->suspend = 1;
+	draw_button(rt, 2, -1);
+	rt->prs->obj_tmp = assign_default_obj_values(rt->prs->obj_tmp, type, 0);
+	if (type == 'C')
+	{
+		rt->prs->obj_tmp->n =
+		ft_strjoin("Camera ", ft_itoa(rt->scn->n_cams), 'R');
+		rt->scn->o = lst_new_camera(rt, rt->scn->o, 1);
+	}
+	else if (type == 'L')
+	{
+		rt->prs->obj_tmp->n =
+		ft_strjoin("Light ", ft_itoa(rt->scn->n_lgts), 'R');
+		rt->scn->o = lst_new_light(rt, rt->scn->o, 1);
+	}
+	else if (type == 'O')
+	{
+		rt->prs->obj_tmp->n =
+		ft_strjoin("Object ", ft_itoa(rt->scn->n_objs), 'R');
+		rt->scn->o = lst_new_object(rt, rt->scn->o, 1);
+	}
+	rt->ui->area[4].h += 29;
+	if (rt->scn->n_elms >= 15)
+		rt->ui->nav_state = 1;
+	if (rt->r_view.x != 18)
+		draw_outliner(rt, -1);
+}
