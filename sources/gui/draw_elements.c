@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/07 15:37:49 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/30 20:12:18 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 17:43:10 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		draw_special_mode(t_rt *rt, int r_num, int type)
 	SDL_LowerBlit(rt->ui->s_ui, &rt->ui->ra_rect[type], rt->s_back,
 	&rt->ui->ra_rect[r_num]);
 	(type == 0) ? (rt->ui->ra_hover = -1) : 1;
-	//SDL_SetCursor(rt->cursor[(type == 1) ? 1 : 0]);
+	SDL_SetCursor(rt->cursor[(type == 1) ? 1 : 0]);
 }
 
 void		draw_materials(t_rt *rt, char type)
@@ -93,5 +93,5 @@ void		draw_button(t_rt *rt, int b_num, int type)
 	SDL_LowerBlit(rt->ui->s_ui, &rt->ui->t_rect, rt->s_back,
 	&rt->ui->b_rect[b_num]);
 	(type == 0) ? (rt->ui->b_hover = -1) : 1;
-	//SDL_SetCursor(rt->cursor[(type == 1 || type == 2) ? 1 : 0]);
+	SDL_SetCursor(rt->cursor[(type == 1 || type == 2) ? 1 : 0]);
 }

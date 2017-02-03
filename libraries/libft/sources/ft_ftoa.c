@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 19:38:08 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/30 20:00:09 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 17:37:42 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,8 @@ char		*ft_dtoa(double num)
 		return (NULL);
 	str[size--] = 0;
 	while ((int)num != 0 && ++i > 0)
-	{
-		(i != 3 && (str[size] = ((int)num % 10) + '0')) ?
-		(num /= 10) : (str[size] = '.');
-		size--;
-	}
+		(i != 3 && (str[size--] = ((int)num % 10) + '0')) ?
+		(num /= 10) : (str[size--] = '.');
 	(size == 1 && i == 2) ? str[size--] = '.' : 1;
 	(size == 1 && i != 2) ? str[size--] = '-' : 1;
 	(size == 0) ? str[0] = '0' : 1;

@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/17 21:00:30 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/30 20:13:34 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:06:16 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int			handle_click_nav(t_rt *rt)
 	}
 	else
 		rt->scn->b_outliner = rt->scn->b_outliner->next;
-	draw_outliner(rt, -1);
+	draw_outliner(rt, -1, 0);
 	handle_outliner(rt, 0, 0, 0);
 	return (1);
 }

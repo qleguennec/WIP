@@ -6,25 +6,11 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 14:49:22 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/26 10:42:13 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 18:39:46 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt.h"
-
-/*static void	free_list_iter(t_iter *current_node)
-{
-    if (current_node->next)
-        free_list_iter(current_node->next);
-    free(current_node);
-}
-
-static void	free_list_thread(t_thread *current_node)
-{
-    if (current_node->next)
-        free_list_thread(current_node->next);
-    free(current_node);
-}*/
 
 static void	free_gui(t_rt *rt)
 {
@@ -60,9 +46,6 @@ int			free_elements(t_rt *rt)
 	SDL_FreeSurface(rt->w_icon);
 	SDL_FreeSurface(rt->s_rend);
 	SDL_FreeSurface(rt->s_process);
-	//free_list_iter(rt->iter);
-	//free_list_thread(rt->t);
-	free(rt->stack);
 	TTF_Quit();
 	SDL_Quit();
 	free(rt);

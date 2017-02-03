@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:13:35 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/29 17:52:58 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 17:49:18 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 static int	add_render_frame(t_rt *rt)
 {
 	SDL_LowerBlit(rt->s_rend, &(SDL_Rect){(rt->r_view.x - 18), 0, rt->r_view.w,
-	rt->r_view.h}, rt->s_back, &rt->r_view);/*
-	SDL_LowerBlit(rt->s_process, &(SDL_Rect){0, 0, rt->r_view.w, rt->r_view.h},
-	rt->s_back, &rt->r_view);*/
+	rt->r_view.h}, rt->s_back, &rt->r_view);
 	rt->render = 0;
 	return (1);
 }

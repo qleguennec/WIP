@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/30 19:46:39 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 18:14:52 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,5 +119,7 @@ void			ft_putnl(void);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *str, int fd);
 void			ft_putendl_fd(char const *str, int fd);
+
+char			*comment(char *comment);
 
 #endif

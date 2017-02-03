@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/07 15:28:36 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/29 18:11:35 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 18:32:59 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,9 @@ static void	init_gui_areas(t_ui *ui, short i)
 	ui->area[3] = (SDL_Rect){144, 101, 47, 63};
 	ui->area[4] = (SDL_Rect){13, 224, 188, (i * 29) - 1};
 	ui->area[7] = (SDL_Rect){1066, 67, 214, 653};
-	ui->area[8] = (SDL_Rect){1075, 77, 195, 422}; // Selected element
+	comment(" v Current Selected Element Area v ");
+	ui->area[8] = (SDL_Rect){1075, 77, 195, 422};
+	comment(" ^ Current Selected Element Area ^ ");
 	ui->area[9] = (SDL_Rect){1084, 625, 12, 68};
 	ui->area[10] = (SDL_Rect){0, 690, 215, 30};
 	ui->area[11] = (SDL_Rect){1065, 690, 215, 30};
@@ -117,5 +119,5 @@ void		init_gui_structure(t_rt *rt)
 	SDL_LowerBlit(rt->ui->s_ui, &rt->ui->ra_rect[2], rt->s_back,
 	&rt->ui->ra_rect[rt->scn->sp_mode + 3]);
 	init_buttons(rt);
-	//SDL_SetCursor(rt->cursor[0]);
+	SDL_SetCursor(rt->cursor[0]);
 }

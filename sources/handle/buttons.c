@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/07 15:56:06 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/29 10:37:55 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 17:43:46 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		execute_button(t_rt *rt, int button)
 	else if (button >= 7 && button <= 11 && (rt->n_info = (button - 2)) != 0)
 		add_new_element(rt, 'O');
 	else if (button >= 12 && button <= 15 && (rt->n_info = (button + 2)) != 0)
-		/*printf("Assign a Shader to the current selected object.\n")*/;
+		printf("Assign a Shader to the current selected object.\n");
 	else if (button == 18 && (rt->n_info = 21) != 0)
 		save_to_png(rt);
 	edit_buttons_state(rt, 0);
@@ -84,5 +84,5 @@ void		handle_buttons(t_rt *rt)
 	if (rt->ui->b_state[(int)rt->ui->b_hover] < 2)
 		draw_button(rt, rt->ui->b_hover, 1);
 	else if (rt->ui->b_hover == 16 || rt->ui->b_hover == 17)
-		/*SDL_SetCursor(rt->cursor[1])*/;
+		SDL_SetCursor(rt->cursor[1]);
 }

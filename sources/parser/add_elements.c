@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 02:06:16 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/30 16:42:56 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 18:19:56 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ static int	add_element_parameters(t_rt *rt, int e, char type)
 	else if (e > -1 && type == 'O' && (e = check_balises(rt, BO_M, BC_M)) > 1)
 		(get_m(rt, e, BO_M, BC_M)) ?
 		(rt->prs->obj_tmp->m = rt->prs->t_i) : i(&e, -1);
-	else if (e > -1 && (rt->prs->b_o = BO_C) && (rt->prs->b_c = BC_C))
+	else if (e > -1 && (rt->prs->b_o = BO_C) &&
+	(rt->prs->b_c = BC_C))
 		return (error(rt, 10, 2));
 	return (e);
 }

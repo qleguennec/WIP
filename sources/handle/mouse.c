@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/07 15:42:55 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/30 14:34:28 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:32:27 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void		handle_double_click_down(t_rt *rt)
 {
-	if (rt->ui->c_down != -1 || rt->ui->c_hover == -1 || rt->ui->c_hover == 'C' ||
-	rt->ui->c_elem == rt->scn->c_cam)
+	if (rt->ui->c_down != -1 || rt->ui->c_hover == -1 || rt->ui->c_hover == 'C'
+	|| rt->ui->c_elem == rt->scn->c_cam)
 		return ;
 	rt->n_info = -2;
 	rt->scn->c_cam = rt->ui->c_elem;
@@ -32,13 +32,14 @@ void		handle_left_click_up(t_rt *rt)
 	if (rt->ui->b_down != -1 && rt->ui->b_state[(int)rt->ui->b_down] < 2 &&
 		fsdl_pt_in_rect(&rt->m_pos, rt->ui->b_rect[(int)rt->ui->b_down]))
 		draw_button(rt, rt->ui->b_down, 1);
-	if (rt->ui->c_down > -1 && fsdl_pt_in_rect(&rt->m_pos, rt->ui->c_elem->r_ol))
+	if (rt->ui->c_down > -1 &&
+	fsdl_pt_in_rect(&rt->m_pos, rt->ui->c_elem->r_ol))
 		draw_outliner_element(rt, rt->ui->c_elem, 1);
 	if (rt->ui->ra_down != -1 &&
 	fsdl_pt_in_rect(&rt->m_pos, rt->ui->ra_rect[(int)rt->ui->ra_down + 3]))
 		draw_special_mode(rt, rt->ui->ra_down, 1);
 	if (rt->ui->ra_down != -1)
-		/*SDL_SetCursor(rt->cursor[0])*/;
+		SDL_SetCursor(rt->cursor[0]);
 	rt->ui->b_down = -1;
 	rt->ui->c_down = -1;
 	rt->ui->ra_down = -1;
@@ -59,7 +60,8 @@ void		handle_left_click_down(t_rt *rt)
 
 void		handle_right_click_down(t_rt *rt)
 {
-	if (rt->ui->c_down != -1 || rt->ui->c_hover == -1 || rt->ui->c_elem->t == 'C')
+	if (rt->ui->c_down != -1 || rt->ui->c_hover == -1 ||
+	rt->ui->c_elem->t == 'C')
 		return ;
 	rt->n_info = -2;
 	if (rt->ui->c_elem->v == 0)
@@ -95,7 +97,7 @@ void		handle_motion_mouse(t_rt *rt)
 		return ;
 	else if (rt->ui->ra_hover != -1)
 		draw_special_mode(rt, rt->ui->ra_hover, 0);
-	if (rt->ui->c_hover > -1 && fsdl_pt_in_rect(&rt->m_pos, rt->ui->c_elem->r_ol))
+	if (rt->ui->c_hover > -1 && fsdl_pt_in_rect(&rt->m_pos, RECT_OUTLINER))
 		return ;
 	else if (rt->ui->c_hover > -1)
 		draw_outliner_element(rt, rt->ui->c_elem, 0);
@@ -111,6 +113,6 @@ void		handle_motion_mouse(t_rt *rt)
 	else if (rt->ui->b_hover != -1 && rt->ui->b_state[(int)rt->ui->b_hover] == 2
 	&& !fsdl_pt_in_rect(&rt->m_pos, rt->ui->b_rect[(int)rt->ui->b_hover]) &&
 		(rt->ui->b_hover = -1) != 0)
-		/*SDL_SetCursor(rt->cursor[0])*/;
+		SDL_SetCursor(rt->cursor[0]);
 	check_mouse_areas(rt);
 }

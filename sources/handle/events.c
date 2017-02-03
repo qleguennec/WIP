@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 19:22:48 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/23 18:02:08 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 16:50:36 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		handle_events(t_rt *rt)
 {
 	if (rt->event.window.event == SDL_WINDOWEVENT_CLOSE ||
-	rt->event.key.keysym.sym == SDLK_ESCAPE)
+	(rt->event.type == SDL_KEYDOWN && rt->event.key.keysym.sym == SDLK_ESCAPE))
 		rt->run = 0;
 	else if (rt->event.type == 0x402 && rt->event.button.button == 1)
 		handle_left_click_up(rt);

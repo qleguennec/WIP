@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 18:43:50 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/29 17:52:09 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:06:01 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	draw_left_panel(t_rt *rt)
 	fsdl_fill_rect(rt->s_back, (SDL_Rect){214, 690, 1, 30}, WIN_BG);
 	draw_scene_parameters(rt);
 	draw_renderer_info(rt);
-	draw_outliner(rt, -1);
+	draw_outliner(rt, -1, 0);
 }
 
 static void	draw_right_panel(t_rt *rt)

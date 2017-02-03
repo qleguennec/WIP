@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 18:43:06 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/30 14:00:08 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:06:36 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void		draw_outliner_element(t_rt *rt, t_obj *obj, int state)
 	SDL_FreeSurface(rt->ui->s_tmp);
 	if (state == 0)
 		rt->ui->c_hover = -1;
-	//SDL_SetCursor(rt->cursor[1]);
+	SDL_SetCursor(rt->cursor[1]);
 }
 
 static void	draw_outliner_title(t_rt *rt, int i)
@@ -79,10 +79,9 @@ void		draw_top_nav_button(t_rt *rt, int state)
 	else if (state == 0)
 		state = 552;
 	else if (state == 1)
-		state = 568;	
+		state = 568;
 	SDL_LowerBlit(rt->ui->s_ui, &(SDL_Rect){13, state, 188, 16},
 	rt->s_back, &(SDL_Rect){13, 223, 188, 16});
-
 	rt->ui->area[12].y += 15;
 }
 
@@ -124,9 +123,8 @@ void		draw_nav_element(t_rt *rt, int state)
 	rt->ui->r_hover = (SDL_Rect){0, 0, 0, 0};
 }
 
-void		draw_outliner(t_rt *rt, int i)
+void		draw_outliner(t_rt *rt, int i, int max)
 {
-	int		max;
 	t_obj	*list;
 
 	list = rt->scn->b_outliner;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_info.c                                        :+:      :+:    :+:   */
+/*   draw_info_and_state.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 18:44:46 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/23 18:45:51 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 17:42:14 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,9 @@ int			draw_state_frame(t_rt *rt)
 	char	*str;
 
 	if (!rt->suspend)
-		str = ft_strf(REND00, (rt->iter->s - 1), ALIASING);
-	else
-		str = ft_strf(REND01, (rt->iter->s - 1), ALIASING);
-	/*if (!rt->suspend)
 		str = ft_strf(REND00, 0, ALIASING);
 	else
-		str = ft_strf(REND01, 0, ALIASING);*/
+		str = ft_strf(REND01, 0, ALIASING);
 	rt->ui->s_tmp = TTF_RenderText_Shaded(rt->ui->font[1], str,
 	(SDL_Color){162, 162, 162, 255}, (SDL_Color){47, 47, 47, 255});
 	SDL_LowerBlit(rt->ui->s_tmp, &(SDL_Rect){0, 0, rt->ui->s_tmp->w,

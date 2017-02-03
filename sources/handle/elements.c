@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   elements.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:56:13 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/27 04:22:15 by root             ###   ########.fr       */
+/*   Updated: 2017/02/02 19:08:07 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ void		add_new_element(t_rt *rt, char type)
 	rt->ui->area[4].h += 29;
 	if (rt->scn->n_elms >= 15)
 		rt->ui->nav_state = 1;
-	if (rt->r_view.x != 18)
-		draw_outliner(rt, -1);
+	(rt->r_view.x != 18) ? draw_outliner(rt, -1, 0) : 1;
 }

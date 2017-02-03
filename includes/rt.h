@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 17:26:10 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/29 18:22:11 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:33:00 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@
 # define SDL_PF 373694468
 
 # define IMG "Image"
+
+# define RECT_OUTLINER rt->ui->c_elem->r_ol
 
 /*
 ** -----------------------------------------------------------------------------
@@ -410,10 +412,7 @@ struct				s_rt
 	BOOL			suspend;
 
 	t_vec3			***tab;
-	t_iter			*iter;
-	void			*stack;
 	int				m_thread;
-	t_thread		*t;
 
 	pthread_t		render_th;
 	pthread_mutex_t	mutex;
@@ -475,7 +474,7 @@ int					draw_info_bar(t_rt *rt);
 
 void				draw_scene_parameters(t_rt *rt);
 
-void				draw_outliner(t_rt *rt, int i);
+void				draw_outliner(t_rt *rt, int i, int max);
 void				draw_outliner_element(t_rt *rt, t_obj *obj, int state);
 void				draw_nav_element(t_rt *rt, int state);
 void				draw_top_nav_button(t_rt *rt, int state);
