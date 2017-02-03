@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/07 16:01:42 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/01/11 11:32:30 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/03 18:40:42 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ typedef	struct		s_timer
 void			fsdl_draw_pixel(SDL_Surface *dst, int x, int y, size_t clr);
 //void			fsdl_draw_pixels(SDL_Surface *dst, int *x, int *y, size_t clr);
 
-void			fsdl_draw_point(SDL_Surface *dst, SDL_Point *p, size_t clr);
+//void			fsdl_draw_pt(SDL_Surface *dst, SDL_Point *p, size_t clr);
+void			fsdl_draw_pt(SDL_Surface *dst, size_t clr, int x, int y);
 //void			fsdl_draw_points(SDL_Surface *dst, SDL_Point *p, size_t clr);
 
 //void			fsdl_draw_line(SDL_Surface *dst, t_line *l, size_t clr);
