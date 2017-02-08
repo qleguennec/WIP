@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:49:37 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/02/02 19:06:11 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/08 13:01:05 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void		init_renderer(t_rt *rt)
 {
 	rt->run = 1;
 	rt->m_thread = 16;
-	rt->suspend = 0;
+	rt->suspend = 1;
 	rt->n_info = 0;
 	rt->t_info = 0;
 	rt->s_elem = NULL;

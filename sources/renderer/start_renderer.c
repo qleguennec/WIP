@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:13:35 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/02/02 17:49:18 by bsouchet         ###   ########.fr       */
+/*   Updated: 2017/02/08 13:00:15 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,5 @@ int			create_window(t_rt *rt)
 	SDL_SetWindowIcon(rt->win, rt->w_icon);
 	free(rt->w_title);
 	init_renderer(rt);
-	pthread_mutex_init(&rt->mutex, NULL);
-	pthread_cond_init(&rt->display_cond, NULL);
-	pthread_create(&rt->render_th, NULL, (void *)render_loop, (void *)rt);
 	return (global_loop(rt));
 }
